@@ -1,6 +1,5 @@
 /* Разработать программу, которая проверяет, что все символы в строке уникальные (true — если уникальные, false etc). Функция проверки должна быть регистронезависимой.
 
-
 Например:
 
 abcd — true
@@ -35,6 +34,6 @@ func isUnique(input string) bool {
 func main() {
 	stringsToTest := []string{"abcd", "abCdefAaf", "aabcd"}
 	for _, str := range stringsToTest {
-		fmt.Printf("Строка \"%s\" имеет уникальные символы: %t\n", str, isUnique(str))
+		fmt.Printf("\"%s\" - %t\n", str, isUnique(str))
 	}
 }

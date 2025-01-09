@@ -2,10 +2,13 @@
 Разработать программу, которая переворачивает слова в строке.
 Пример: «snow dog sun — sun dog snow».
 */
+
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -20,9 +23,10 @@ func reverseWords(input string) string {
 }
 
 func main() {
-	input := "snop dog everyday"
-
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Введите строку: ")
+	input, _ := reader.ReadString('\n')
+	input = strings.TrimSpace(input)
 	reversed := reverseWords(input)
-
 	fmt.Printf("Перевёрнутая строка: %s\n", reversed)
 }

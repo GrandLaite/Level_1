@@ -11,7 +11,7 @@ func main() {
 	b := new(big.Int)
 
 	a.SetString("1048577", 10)
-	b.SetString("2097153", 10)
+	b.SetString("3097153", 10)
 
 	sum := new(big.Int).Add(a, b)
 	fmt.Printf("Сумма: %s\n", sum.String())
@@ -22,7 +22,7 @@ func main() {
 	mul := new(big.Int).Mul(a, b)
 	fmt.Printf("Произведение: %s\n", mul.String())
 
-	div := new(big.Int).Div(a, b)
-	fmt.Printf("Частное: %s\n", div.String())
+	div := new(big.Rat).SetFrac(a, b)
+	fmt.Printf("Частное: %s\n", div.FloatString(10))
 
 }
